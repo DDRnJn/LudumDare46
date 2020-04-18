@@ -9,6 +9,11 @@ public class PlayerController : MonoBehaviour
     public Transform playerSprite;
     public Transform shooter;
 
+    public Transform basicProjectile;
+
+    public float fireDelay;
+    float currentTime;
+
     void Update()
     {
         Vector2 translation = this.getTranslation();
@@ -17,6 +22,14 @@ public class PlayerController : MonoBehaviour
         this.transform.Translate(translation);
         this.playerSprite.rotation = Quaternion.Euler(rotation);
         this.shooter.rotation = Quaternion.Euler(rotation);
+
+        this.currentTime = this.currentTime + Time.deltaTime;
+        if (Input.GetButton("Fire1") && this.currentTime > this.fireDelay)
+        {
+            this.Fire();
+            this.currentTime = 0.0f;
+        }
+
     }
 
     Vector2 getTranslation()
@@ -49,5 +62,11 @@ public class PlayerController : MonoBehaviour
         mousePosition.y = mousePosition.y - objectPosition.y;
         float angle = Mathf.Atan2(mousePosition.y, mousePosition.x) * Mathf.Rad2Deg;
         return new Vector3(0, 0, angle);
+    }
+
+    void Fire()
+    {
+        Transform basicProjectile = Instantiate(this.basicProjectile, this.shooter.transform.position,
+                                      this.shooter.transform.rotation);
     }
 }

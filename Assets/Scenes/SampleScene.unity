@@ -145,7 +145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89166920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 298897592}
@@ -200,6 +200,9 @@ MonoBehaviour:
   rotation: {x: 0, y: 0}
   playerSprite: {fileID: 1431643092}
   shooter: {fileID: 89166921}
+  basicProjectile: {fileID: 7022905758796342025, guid: 6e478158a7bff1841a13c877a2c75f5c,
+    type: 3}
+  fireDelay: 0.4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
