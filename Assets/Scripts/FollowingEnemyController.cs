@@ -26,9 +26,8 @@ public class FollowingEnemyController : EnemyController
             {
                 health.takeDamage(1);
             }
+            this.bounceBack();
         }
-        this.bounceBack();
-
     }
 
     void bounceBack()

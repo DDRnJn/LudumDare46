@@ -78,13 +78,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811366fbd36ee4a458b5835b23527e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.05
+  movementSpeed: 0.1
   rotation: {x: 0, y: 0}
   playerSprite: {fileID: 2468482859147673506}
   shooter: {fileID: 2468482857805711423}
   basicProjectile: {fileID: 4014646270616412803, guid: 0d9d4db39abb83c4891dfc338bbf709c,
     type: 3}
-  fireDelay: 0.4
+  fireDelay: 0.2
 --- !u!114 &2878334928603274506
 MonoBehaviour:
   m_ObjectHideFlags: 0
