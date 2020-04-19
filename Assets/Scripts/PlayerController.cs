@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
         mousePosition.x = mousePosition.x - objectPosition.x;
         mousePosition.y = mousePosition.y - objectPosition.y;
         float angle = Mathf.Atan2(mousePosition.y, mousePosition.x) * Mathf.Rad2Deg;
-        return new Vector3(0, 0, angle);
+        return new Vector3(0, 0, angle - 90);
     }
 
     void Fire()
