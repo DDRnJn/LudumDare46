@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
         GameObject other = collision.gameObject;
         if (other.tag == "Player")
         {
-            Physics.IgnoreCollision(other.GetComponent<Collider>(), this.GetComponent<Collider>());
+            Physics2D.IgnoreCollision(other.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
         }
         else
         {
