@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
 
     public SpawnManager Spawner;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         this.target = GameObject.FindWithTag("Player").transform;
     }
