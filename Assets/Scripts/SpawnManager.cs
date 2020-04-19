@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public Transform player;
     public List<Transform> enemyTypes;
     public int maxEnemySpawnNum;
 
@@ -29,7 +30,20 @@ public class SpawnManager : MonoBehaviour
         Vector2 backgroundSize = this.getBackgroundSize();//this.background.GetComponent<SpriteRenderer>().sprite.rect.size;
         float xMax = backgroundSize.x / 2;
         float yMax = backgroundSize.y / 2;
-        Vector2 randomPoint = new Vector2(Random.Range(-xMax, xMax), Random.Range(-yMax, yMax));
+
+        float spawnX = Random.Range(-xMax, xMax);
+        float spawnY = Random.Range(-yMax, yMax);
+
+        if (Mathf.Abs(spawnX) < minDistFromPlayer)
+        {
+            spawnX = minDistFromPlayer;
+        }
+        if (Mathf.Abs(spawnY) < minDistFromPlayer)
+        {
+            spawnY = minDistFromPlayer;
+        }
+
+        Vector2 randomPoint = new Vector2(spawnX, spawnY);
         return randomPoint;
     }
 
