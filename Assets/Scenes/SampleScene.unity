@@ -310,6 +310,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 511085428588715610, guid: 461b3d2efb1af604c901d0336d9535dd,
+        type: 3}
+      propertyPath: totalHealth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3101574083083356372, guid: 461b3d2efb1af604c901d0336d9535dd,
         type: 3}
       propertyPath: m_Name
@@ -496,6 +501,8 @@ MonoBehaviour:
   speed: 2
   target: {fileID: 0}
   minDistance: 4
+  towardsSpeedScale: 0
+  awaySpeedScale: 0
 --- !u!1 &2021263589
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,7 +582,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2085841884 stripped
 GameObject:
