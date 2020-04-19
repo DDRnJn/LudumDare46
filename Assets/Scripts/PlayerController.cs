@@ -66,7 +66,8 @@ public class PlayerController : MonoBehaviour
 
     void Fire()
     {
-        Transform basicProjectile = Instantiate(this.basicProjectile, this.shooter.transform.position,
-                                      this.shooter.transform.rotation);
+        Transform basicProjectile = Instantiate(this.basicProjectile, this.transform.position,
+                                      Quaternion.Euler(this.getRotation()));
+
     }
 }
