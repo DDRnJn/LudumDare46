@@ -247,6 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7405edc07e9241c45ae19dbbd93e0e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 874391089}
   enemyTypes:
   - {fileID: 2128672614170035358, guid: 461b3d2efb1af604c901d0336d9535dd, type: 3}
   maxEnemySpawnNum: 5
