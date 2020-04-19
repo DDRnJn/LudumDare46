@@ -8,7 +8,7 @@ public class SpawnManager : MonoBehaviour
     public List<Transform> enemyTypes;
     public int maxEnemySpawnNum;
 
-    public int currentEnemySpawns;
+    public int currentEnemySpawns = 0;
     public int minSpawnRate;
     public int maxSpawnRate;
 
@@ -57,8 +57,14 @@ public class SpawnManager : MonoBehaviour
 
     void CreateEnemy()
     {
-        Transform enemy = this.enemyTypes[Random.Range(0, this.enemyTypes.Count)];
-        Instantiate(enemy, this.getEnemySpawnPoint(), this.transform.rotation);
+        if (currentEnemySpawns < maxEnemySpawnNum)
+        {
+            Transform enemy = this.enemyTypes[Random.Range(0, this.enemyTypes.Count)];
+            Transform enemySpawn = Instantiate(enemy, this.getEnemySpawnPoint(), this.transform.rotation);
+            EnemyController enemyController = enemySpawn.GetComponent<EnemyController>();
+            enemyController.Spawner = this;
+            this.currentEnemySpawns += 1;
+        }
     }
 
 

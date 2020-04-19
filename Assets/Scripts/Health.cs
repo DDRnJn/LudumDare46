@@ -23,6 +23,14 @@ public class Health : MonoBehaviour
 
     public void die()
     {
-        Destroy(this.gameObject);
+        if (this.gameObject.tag == "Enemy")
+        {
+            EnemyController enemyController = this.gameObject.GetComponent<EnemyController>();
+            enemyController.destroy();
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
