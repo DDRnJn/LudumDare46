@@ -15,12 +15,20 @@ public class FollowingEnemyController : EnemyController
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject other = collision.gameObject;
-        Health health = other.GetComponent<Health>();
-        if (health)
+        if (other.tag == this.tag)
         {
-            health.takeDamage(1);
+            Physics2D.IgnoreCollision(other.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
+        }
+        else
+        {
+            Health health = other.GetComponent<Health>();
+            if (health)
+            {
+                health.takeDamage(1);
+            }
         }
         this.bounceBack();
+
     }
 
     void bounceBack()

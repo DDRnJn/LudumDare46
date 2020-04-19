@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
     public float lifetime;
 
     public string targetTag;
+
+    public string selfTag;
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,7 +31,7 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject other = collision.gameObject;
-        if (other.tag == "Player")
+        if (other.tag == this.selfTag)
         {
             Physics2D.IgnoreCollision(other.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
         }
