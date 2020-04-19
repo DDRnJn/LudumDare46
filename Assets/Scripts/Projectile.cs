@@ -16,8 +16,11 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = new Vector3(this.transform.position.x * this.speed,
-                                            this.transform.position.y * this.speed,
+        float angle = (this.transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
+        float xOffset = Mathf.Cos(angle) * 0.1f * speed;
+        float yOffset = Mathf.Sin(angle) * 0.1f * speed;
+        this.transform.position = new Vector3(this.transform.position.x + xOffset,
+                                            this.transform.position.y + yOffset,
                                             this.transform.position.z);
     }
 }
