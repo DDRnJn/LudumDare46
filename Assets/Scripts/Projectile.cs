@@ -29,11 +29,18 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject other = collision.gameObject;
-        Health health = other.GetComponent<Health>();
-        if (health && other.tag == targetTag)
+        if (other.tag == "Player")
         {
-            health.takeDamage(1);
+            Physics.IgnoreCollision(other.GetComponent<Collider>(), this.GetComponent<Collider>());
         }
-        Destroy(this.gameObject);
+        else
+        {
+            Health health = other.GetComponent<Health>();
+            if (health && other.tag == targetTag)
+            {
+                health.takeDamage(1);
+            }
+            Destroy(this.gameObject);
+        }
     }
 }
