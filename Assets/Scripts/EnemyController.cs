@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float speed = .05f;
-    public Sprite enemyImage;
+    public float speed;
     public Transform target;
 
     private void Awake()

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    int totalHealth;
-    int currentHealth;
+    public int totalHealth;
+    public int currentHealth;
 
     private void Awake()
     {
