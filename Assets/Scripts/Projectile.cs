@@ -7,6 +7,8 @@ public class Projectile : MonoBehaviour
     public float speed;
 
     public float lifetime;
+
+    public string targetTag;
     // Start is called before the first frame update
     void Awake()
     {
@@ -22,5 +24,16 @@ public class Projectile : MonoBehaviour
         this.transform.position = new Vector3(this.transform.position.x + xOffset,
                                             this.transform.position.y + yOffset,
                                             this.transform.position.z);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject other = collision.gameObject;
+        Health health = other.GetComponent<Health>();
+        if (health && other.tag == targetTag)
+        {
+            health.takeDamage(1);
+        }
+        Destroy(this.gameObject);
     }
 }

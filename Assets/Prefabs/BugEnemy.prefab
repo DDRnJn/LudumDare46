@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3101574083083356374}
   - component: {fileID: 3101574083083356373}
+  - component: {fileID: 511085428588715610}
   m_Layer: 0
   m_Name: BugEnemy
   m_TagString: Untagged
@@ -46,6 +47,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   target: {fileID: 0}
+--- !u!114 &511085428588715610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3101574083083356372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5051989f8c65c464bb35aa339997ca70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalHealth: 2
+  currentHealth: 0
 --- !u!1 &3101574084038666495
 GameObject:
   m_ObjectHideFlags: 0
