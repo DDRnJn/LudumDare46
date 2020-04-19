@@ -17,8 +17,8 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         float angle = (this.transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
-        float xOffset = Mathf.Cos(angle) * 0.1f * speed;
-        float yOffset = Mathf.Sin(angle) * 0.1f * speed;
+        float xOffset = Mathf.Cos(angle) * speed;
+        float yOffset = Mathf.Sin(angle) * speed;
         this.transform.position = new Vector3(this.transform.position.x + xOffset,
                                             this.transform.position.y + yOffset,
                                             this.transform.position.z);
