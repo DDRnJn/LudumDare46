@@ -12,13 +12,13 @@ public class Projectile : MonoBehaviour
 
     public string selfTag;
     // Start is called before the first frame update
-    void Awake()
+    protected virtual void Awake()
     {
         Destroy(this.gameObject, this.lifetime);
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         float angle = (this.transform.rotation.eulerAngles.z + 90) * Mathf.Deg2Rad;
         float xOffset = Mathf.Cos(angle) * speed;
