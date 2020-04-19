@@ -250,7 +250,6 @@ MonoBehaviour:
   player: {fileID: 874391089}
   enemyTypes:
   - {fileID: 2128672614170035358, guid: 461b3d2efb1af604c901d0336d9535dd, type: 3}
-  - {fileID: 0}
   maxEnemySpawnNum: 5
   currentEnemySpawns: 0
   minSpawnRate: 2
@@ -355,6 +354,16 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7743516046893687333, guid: 719926d43fc3c20418b28794c11c603e,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7743516046893687333, guid: 719926d43fc3c20418b28794c11c603e,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 719926d43fc3c20418b28794c11c603e, type: 3}
 --- !u!4 &874391089 stripped
@@ -363,99 +372,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 874391088}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1208109460
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 755684847626022057, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-        type: 3}
-      propertyPath: m_Name
-      value: GarbageBinEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 755684847626022060, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 755684847626022060, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 755684847626022060, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 755684847626022060, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 755684847626022060, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 755684847626022060, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 755684847626022060, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 755684847626022060, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 755684847626022060, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 755684847626022060, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 755684847626022060, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 755684847626022063, guid: fad16f8ee11ee7f4bbe4097ea8c54631, type: 3}
-  m_SourcePrefab: {fileID: 100100000, guid: fad16f8ee11ee7f4bbe4097ea8c54631, type: 3}
---- !u!1 &1208109461 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 755684847626022057, guid: fad16f8ee11ee7f4bbe4097ea8c54631,
-    type: 3}
-  m_PrefabInstance: {fileID: 1208109460}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1208109462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208109461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3af5e10fad32c54cb19e5c8dd6a0fda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  target: {fileID: 0}
-  minDistance: 0
-  towardsSpeedScale: 0
-  awaySpeedScale: 0
 --- !u!1 &2021263589
 GameObject:
   m_ObjectHideFlags: 0

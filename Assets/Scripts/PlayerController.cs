@@ -70,4 +70,21 @@ public class PlayerController : MonoBehaviour
                                       Quaternion.Euler(this.getRotation()));
 
     }
+
+    void bounceBack(GameObject other)
+    {
+        Vector2 newPosition = Vector2.MoveTowards(this.transform.position,
+                                                       other.transform.position,
+                                                      -0.5f);
+        this.transform.position = newPosition;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject other = collision.gameObject;
+        if (other.tag == "Wall")
+        {
+            this.bounceBack(other);
+        }
+    }
 }
