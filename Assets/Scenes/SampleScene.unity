@@ -501,8 +501,8 @@ MonoBehaviour:
   speed: 2
   target: {fileID: 0}
   minDistance: 4
-  towardsSpeedScale: 0
-  awaySpeedScale: 0
+  towardsSpeedScale: 1
+  awaySpeedScale: 3
 --- !u!1 &2021263589
 GameObject:
   m_ObjectHideFlags: 0
