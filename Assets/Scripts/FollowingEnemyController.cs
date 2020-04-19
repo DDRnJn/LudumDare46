@@ -20,5 +20,14 @@ public class FollowingEnemyController : EnemyController
         {
             health.takeDamage(1);
         }
+        this.bounceBack();
+    }
+
+    void bounceBack()
+    {
+        Vector2 newPosition = Vector2.MoveTowards(this.transform.position,
+                                                      this.target.position,
+                                                      -0.6f);
+        this.transform.position = newPosition;
     }
 }
