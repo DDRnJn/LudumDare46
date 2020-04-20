@@ -14,6 +14,8 @@ public class Socket : MonoBehaviour
 
     public LevelInitManager levelInitManager;
 
+    public bool overwriteable = true;
+
     void Start()
     {
         this.levelInitManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelInitManager>();
@@ -28,7 +30,7 @@ public class Socket : MonoBehaviour
 
     public void placeLogicGate(Transform logicGate)
     {
-        if (logicGate)
+        if (this.overwriteable && logicGate)
         {
             if (currentLogicGate)
             {

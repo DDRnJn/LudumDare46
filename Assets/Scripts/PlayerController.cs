@@ -103,8 +103,11 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Socket")
         {
             Socket socket = other.GetComponent<Socket>();
-            socket.placeLogicGate(this.logicGatePlayerTransform);
-            this.logicGatePlayerTransform = null;
+            if (socket.overwriteable)
+            {
+                socket.placeLogicGate(this.logicGatePlayerTransform);
+                this.logicGatePlayerTransform = null;
+            }
         }
     }
 }
