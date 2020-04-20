@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 5351482830570333771}
   - component: {fileID: 456624390365202899}
   - component: {fileID: 3980919581843572262}
+  - component: {fileID: 6513033103944320538}
   m_Layer: 0
   m_Name: OrGate
   m_TagString: GatePlayer
@@ -177,3 +178,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6513033103944320538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6686259831388376453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cdf13b76b0d36a438c71ecb55ca31db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gateType: 1

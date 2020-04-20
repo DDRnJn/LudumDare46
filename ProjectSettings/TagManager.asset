@@ -10,6 +10,7 @@ TagManager:
   - WallPlayer
   - GatePlayer
   - Socket
+  - LevelManager
   layers:
   - Default
   - TransparentFX

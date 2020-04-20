@@ -12,8 +12,11 @@ public class Socket : MonoBehaviour
 
     public Sprite notEmptySprite;
 
+    public LevelInitManager levelInitManager;
+
     void Start()
     {
+        this.levelInitManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelInitManager>();
         if (currentLogicGate && !(empty))
         {
             currentLogicGate.transform.position = this.transform.position;
@@ -38,6 +41,7 @@ public class Socket : MonoBehaviour
             this.empty = false;
             SpriteRenderer spriteRenderer = this.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = this.notEmptySprite;
+            Debug.Log(this.levelInitManager.checkIfLevelComplete());
         }
     }
 }

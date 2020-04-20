@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 7139197281719374913}
   - component: {fileID: 5864718111783555762}
   - component: {fileID: 3641810352661092141}
+  - component: {fileID: 3531716444878638782}
   m_Layer: 0
   m_Name: NotGate
   m_TagString: GatePlayer
@@ -177,3 +178,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3531716444878638782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6271775813328005784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cdf13b76b0d36a438c71ecb55ca31db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gateType: 2
