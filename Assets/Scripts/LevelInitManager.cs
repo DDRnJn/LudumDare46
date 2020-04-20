@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelInitManager : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class LevelInitManager : MonoBehaviour
     public List<Socket> sockets;
 
     public bool expectedOutput;
+
+    public string thisLevel;
+
+    public string nextLevel;
 
     void Awake()
     {
@@ -32,6 +37,11 @@ public class LevelInitManager : MonoBehaviour
             return this.graph.computeGraph() == this.expectedOutput;
         }
         return false;
+    }
+
+    public void goToNextLevel()
+    {
+        SceneManager.LoadScene(nextLevel);
     }
 
     public NodeGraph createLevel1Graph()

@@ -41,7 +41,11 @@ public class Socket : MonoBehaviour
             this.empty = false;
             SpriteRenderer spriteRenderer = this.GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = this.notEmptySprite;
-            Debug.Log(this.levelInitManager.checkIfLevelComplete());
+            if (this.levelInitManager.checkIfLevelComplete())
+            {
+                this.levelInitManager.goToNextLevel();
+            }
+            //Debug.Log(this.levelInitManager.checkIfLevelComplete());
         }
     }
 }

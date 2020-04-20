@@ -3293,6 +3293,16 @@ PrefabInstance:
       propertyPath: sockets.Array.data[2]
       value: 
       objectReference: {fileID: 837502090}
+    - target: {fileID: 5380229663945099547, guid: 5b37e0db00a31754696361e6f5138f06,
+        type: 3}
+      propertyPath: thisLevel
+      value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380229663945099547, guid: 5b37e0db00a31754696361e6f5138f06,
+        type: 3}
+      propertyPath: nextLevel
+      value: Level2
+      objectReference: {fileID: 0}
     - target: {fileID: 5380229663945099548, guid: 5b37e0db00a31754696361e6f5138f06,
         type: 3}
       propertyPath: m_Name
