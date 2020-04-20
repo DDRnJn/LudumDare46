@@ -176,3 +176,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawner: {fileID: 0}
   spawnType: OR
+  logicGatePlayerSprite: {fileID: 1006761306643329061, guid: 67da75d5f69df414682afbeb47ae4614,
+    type: 3}

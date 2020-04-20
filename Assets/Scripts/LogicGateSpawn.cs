@@ -8,6 +8,8 @@ public class LogicGateSpawn : MonoBehaviour
 
     public string spawnType;
 
+    public Transform logicGatePlayerSprite;
+
     public void destroy()
     {
         if (Spawner)

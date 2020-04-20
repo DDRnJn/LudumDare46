@@ -95,6 +95,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawner: {fileID: 0}
   spawnType: NOT
+  logicGatePlayerSprite: {fileID: 5325370387448500613, guid: 1121a2568e7bbc4429c96b3cacd9a7d1,
+    type: 3}
 --- !u!1 &6796831114026394423
 GameObject:
   m_ObjectHideFlags: 0

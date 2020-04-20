@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public float fireDelay;
     float currentTime;
 
+    private Transform logicGatePlayerTransform;
+
     void Update()
     {
         Vector2 translation = this.getTranslation();
@@ -85,6 +87,18 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Wall")
         {
             this.bounceBack(other);
+        }
+        if (other.tag == "GatePickup")
+        {
+            LogicGateSpawn logicGateSpawn = other.GetComponent<LogicGateSpawn>();
+            Transform logicGatePlayerSprite = Instantiate(logicGateSpawn.logicGatePlayerSprite, this.transform.position, this.transform.rotation);
+            if (this.logicGatePlayerTransform)
+            {
+                Destroy(this.logicGatePlayerTransform.gameObject);
+            }
+            logicGatePlayerSprite.transform.parent = this.transform;
+            this.logicGatePlayerTransform = logicGatePlayerSprite;
+            logicGateSpawn.destroy();
         }
     }
 }
