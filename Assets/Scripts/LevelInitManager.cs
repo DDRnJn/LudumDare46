@@ -45,7 +45,7 @@ public class LevelInitManager : MonoBehaviour
         rootNode1.socket = sockets[0];
         rootNode2.socket = sockets[1];
 
-        rootNode1.inputs.Add(false);
+        rootNode1.inputs.Add(true);
         rootNode2.inputs.Add(true);
         rootNode2.inputs.Add(true);
 
