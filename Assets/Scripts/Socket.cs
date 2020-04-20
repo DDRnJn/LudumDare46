@@ -8,6 +8,10 @@ public class Socket : MonoBehaviour
 
     public Transform currentLogicGate;
 
+    public Sprite emptySprite;
+
+    public Sprite notEmptySprite;
+
     public void placeLogicGate(Transform logicGate)
     {
         if (logicGate)
@@ -20,6 +24,9 @@ public class Socket : MonoBehaviour
             logicGate.parent = this.transform;
             logicGate.transform.position = this.transform.position;
             logicGate.transform.rotation = this.transform.rotation;
+            this.empty = false;
+            SpriteRenderer spriteRenderer = this.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = this.notEmptySprite;
         }
     }
 }
