@@ -7,6 +7,9 @@ public class FollowingEnemyController : EnemyController
     void Update()
     {
         float step = speed * Time.deltaTime;
+        Vector3 dir = this.target.position - this.transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         this.transform.position = Vector2.MoveTowards(this.transform.position,
                                                       this.target.position,
                                                       step);
