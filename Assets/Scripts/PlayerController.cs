@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     private Transform logicGatePlayerTransform;
 
-    void Update()
+    void FixedUpdate()
     {
         Vector2 translation = this.getTranslation();
         Vector3 rotation = this.getRotation();
