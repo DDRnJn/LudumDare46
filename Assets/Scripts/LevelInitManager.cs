@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelInitManager : MonoBehaviour
 {
@@ -17,8 +18,28 @@ public class LevelInitManager : MonoBehaviour
 
     public string nextLevel;
 
+    public Button nextLevelButton;
+
+    public Button retryButton;
+
+    public Button mainMenuButton;
+
+    public Transform levelEndCanvas;
+
+    public Transform levelEndCanvasDefeat;
+
+    public Transform player;
+
     void Awake()
     {
+        Button nextButton = this.nextLevelButton.GetComponent<Button>();
+        nextButton.onClick.AddListener(goToNextLevel);
+
+        Button retry = this.retryButton.GetComponent<Button>();
+        retry.onClick.AddListener(retryLevel);
+
+        Button mainMenu = this.mainMenuButton.GetComponent<Button>();
+        mainMenu.onClick.AddListener(goToMainMenu);
         if (levelNum == 1)
         {
             this.graph = createLevel1Graph();
@@ -39,9 +60,34 @@ public class LevelInitManager : MonoBehaviour
         return false;
     }
 
+    public void endLevelVictory()
+    {
+        Health playerHealth = this.player.GetComponent<Health>();
+        playerHealth.canTakeDamage = false;
+        this.levelEndCanvas.gameObject.SetActive(true);
+    }
+
+    public void endLevelDefeat()
+    {
+        Health playerHealth = this.player.GetComponent<Health>();
+        playerHealth.canTakeDamage = false;
+        //this.player.transform.gameObject.SetActive(false);
+        this.levelEndCanvasDefeat.gameObject.SetActive(true);
+    }
+
     public void goToNextLevel()
     {
         SceneManager.LoadScene(nextLevel);
+    }
+
+    public void retryLevel()
+    {
+        SceneManager.LoadScene(thisLevel);
+    }
+
+    public void goToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public NodeGraph createLevel1Graph()

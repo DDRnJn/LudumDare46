@@ -9,6 +9,8 @@ public class Health : MonoBehaviour
 
     public HealthBar healthBar;
 
+    public bool canTakeDamage = true;
+
     private void Awake()
     {
         this.currentHealth = this.totalHealth;
@@ -20,14 +22,17 @@ public class Health : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        this.currentHealth -= damage;
-        if (healthBar)
+        if (canTakeDamage)
         {
-            healthBar.SetHealth(this.currentHealth);
-        }
-        if (this.currentHealth <= 0)
-        {
-            this.die();
+            this.currentHealth -= damage;
+            if (healthBar)
+            {
+                healthBar.SetHealth(this.currentHealth);
+            }
+            if (this.currentHealth <= 0)
+            {
+                this.die();
+            }
         }
     }
 
@@ -37,6 +42,11 @@ public class Health : MonoBehaviour
         {
             EnemyController enemyController = this.gameObject.GetComponent<EnemyController>();
             enemyController.destroy();
+        }
+        else if (this.gameObject.tag == "Player")
+        {
+            LevelInitManager levelInitManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelInitManager>();
+            levelInitManager.endLevelDefeat();
         }
         else
         {

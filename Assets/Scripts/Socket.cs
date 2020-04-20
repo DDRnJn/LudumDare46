@@ -43,7 +43,7 @@ public class Socket : MonoBehaviour
             spriteRenderer.sprite = this.notEmptySprite;
             if (this.levelInitManager.checkIfLevelComplete())
             {
-                this.levelInitManager.goToNextLevel();
+                this.levelInitManager.endLevelVictory();
             }
             //Debug.Log(this.levelInitManager.checkIfLevelComplete());
         }
