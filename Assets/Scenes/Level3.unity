@@ -7279,7 +7279,7 @@ MonoBehaviour:
   - {fileID: 1770579325}
   expectedOutput: 1
   thisLevel: Level3
-  nextLevel: Level1
+  nextLevel: Level4
   nextLevelButton: {fileID: 413703915}
   retryButton: {fileID: 1247168573}
   mainMenuButton: {fileID: 1247168572}
