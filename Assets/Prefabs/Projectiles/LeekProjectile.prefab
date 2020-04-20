@@ -96,12 +96,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038fdf15f8b440b44b080af7ad5b29bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.02
+  speed: 0.1
   lifetime: 10
   targetTag: Player
   selfTag: Enemy
+  canDamageWalls: 1
   frequency: 20
   magnitude: 0.1
+  rotationSpeed: 5
 --- !u!70 &7455663234323831992
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
