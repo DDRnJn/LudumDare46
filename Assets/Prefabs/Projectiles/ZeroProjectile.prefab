@@ -100,6 +100,7 @@ MonoBehaviour:
   lifetime: 7
   targetTag: Player
   selfTag: Enemy
+  canDamageWalls: 0
 --- !u!70 &513049728215543472
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

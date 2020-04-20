@@ -11,6 +11,8 @@ public class Projectile : MonoBehaviour
     public string targetTag;
 
     public string selfTag;
+
+    public bool canDamageWalls = true;
     // Start is called before the first frame update
     protected virtual void Awake()
     {
@@ -39,6 +41,10 @@ public class Projectile : MonoBehaviour
         {
             Health health = other.GetComponent<Health>();
             if (health && other.tag == targetTag)
+            {
+                health.takeDamage(1);
+            }
+            if (health && other.tag == "Wall" && canDamageWalls)
             {
                 health.takeDamage(1);
             }
