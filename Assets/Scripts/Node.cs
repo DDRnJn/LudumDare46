@@ -8,6 +8,8 @@ public class Node
 
     public List<bool> inputs = new List<bool>();
 
+    public List<bool> fixedInputs = new List<bool>();
+
     public Node child;
 
     public bool isRootNode = false;

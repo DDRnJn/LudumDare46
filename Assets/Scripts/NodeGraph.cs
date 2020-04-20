@@ -18,6 +18,13 @@ public class NodeGraph
         }
         foreach (Node node in this.graph)
         {
+            if (node.fixedInputs.Count > 0)
+            {
+                foreach (bool input in node.fixedInputs)
+                {
+                    node.inputs.Add(input);
+                }
+            }
             node.setChildInput();
         }
         return finalNode.computeOutput();
