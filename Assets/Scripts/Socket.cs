@@ -12,6 +12,17 @@ public class Socket : MonoBehaviour
 
     public Sprite notEmptySprite;
 
+    void Start()
+    {
+        if (currentLogicGate && !(empty))
+        {
+            currentLogicGate.transform.position = this.transform.position;
+            currentLogicGate.transform.rotation = this.transform.rotation;
+            SpriteRenderer spriteRenderer = this.GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = this.notEmptySprite;
+        }
+    }
+
     public void placeLogicGate(Transform logicGate)
     {
         if (logicGate)
