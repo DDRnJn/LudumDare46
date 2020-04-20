@@ -12,13 +12,19 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         this.currentHealth = this.totalHealth;
-        this.healthBar.SetMaxHealth(totalHealth);
+        if (healthBar)
+        {
+            this.healthBar.SetMaxHealth(totalHealth);
+        }
     }
 
     public void takeDamage(int damage)
     {
         this.currentHealth -= damage;
-        healthBar.SetHealth(this.currentHealth);
+        if (healthBar)
+        {
+            healthBar.SetHealth(this.currentHealth);
+        }
         if (this.currentHealth <= 0)
         {
             this.die();
