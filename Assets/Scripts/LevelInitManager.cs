@@ -53,6 +53,10 @@ public class LevelInitManager : MonoBehaviour
         {
             this.graph = createLevel3Graph();
         }
+        else if (levelNum == 4)
+        {
+            this.graph = createLevel4Graph();
+        }
     }
 
     public bool checkIfLevelComplete()
@@ -250,6 +254,63 @@ public class LevelInitManager : MonoBehaviour
         graph.graph.Add(finalNode);
 
         return graph;
+    }
 
+    public NodeGraph createLevel4Graph()
+    {
+        NodeGraph graph = new NodeGraph();
+
+        this.expectedOutput = true;
+
+        Node rootNode1 = new Node();
+        Node rootNode2 = new Node();
+
+        Node middleNode1 = new Node();
+        Node middleNode2 = new Node();
+        Node middleNode3 = new Node();
+
+        Node finalNode = new Node();
+
+        rootNode1.socket = sockets[0];
+        rootNode2.socket = sockets[1];
+
+        middleNode1.socket = sockets[2];
+        middleNode2.socket = sockets[3];
+        middleNode3.socket = sockets[4];
+
+        finalNode.socket = sockets[5];
+
+        rootNode1.isRootNode = true;
+        rootNode2.isRootNode = true;
+
+        finalNode.isFinalNode = true;
+        graph.finalNode = finalNode;
+
+        rootNode1.inputs.Add(true);
+        rootNode1.inputs.Add(true);
+        rootNode2.inputs.Add(false);
+        middleNode3.fixedInputs.Add(false);
+
+        rootNode1.child = middleNode1;
+        rootNode2.child = middleNode2;
+        middleNode1.child = middleNode2;
+        middleNode2.child = middleNode3;
+        middleNode3.child = finalNode;
+
+        rootNode1.inputNum = 2;
+        rootNode2.inputNum = 1;
+        middleNode1.inputNum = 1;
+        middleNode2.inputNum = 2;
+        middleNode3.inputNum = 2;
+        finalNode.inputNum = 1;
+
+        graph.graph.Add(rootNode1);
+        graph.graph.Add(rootNode2);
+        graph.graph.Add(middleNode1);
+        graph.graph.Add(middleNode2);
+        graph.graph.Add(middleNode3);
+        graph.graph.Add(finalNode);
+
+        return graph;
     }
 }
