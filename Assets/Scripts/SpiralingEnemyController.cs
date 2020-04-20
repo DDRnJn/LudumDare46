@@ -67,14 +67,14 @@ public class SpiralingEnemyController : EnemyController
             {
                 health.takeDamage(1);
             }
-            this.bounceBack();
+            this.bounceBack(other);
         }
     }
 
-    void bounceBack()
+    void bounceBack(GameObject other)
     {
         Vector2 newPosition = Vector2.MoveTowards(this.transform.position,
-                                                      this.target.position,
+                                                      other.transform.position,
                                                       -0.6f);
         Vector3 oldPosition = this.transform.position;
         this.transform.position = newPosition;
