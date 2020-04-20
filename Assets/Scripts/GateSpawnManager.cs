@@ -20,11 +20,13 @@ public class GateSpawnManager : MonoBehaviour
     private Vector2 getEnemySpawnPoint()
     {
         Vector2 backgroundSize = this.getBackgroundSize();//this.background.GetComponent<SpriteRenderer>().sprite.rect.size;
-        float xMax = backgroundSize.x / 2;
-        float yMax = backgroundSize.y / 2;
+        float xMax = (backgroundSize.x * this.background.transform.localScale.x) / 2;
+        float yMax = (backgroundSize.y * this.background.transform.localScale.y) / 2;
+        float xMin = this.background.transform.position.x - xMax;
+        float yMin = this.background.transform.position.y - yMax;
 
-        float spawnX = Random.Range(-xMax, xMax);
-        float spawnY = Random.Range(-yMax, yMax);
+        float spawnX = Random.Range(xMin, xMax);
+        float spawnY = Random.Range(yMin, yMax);
 
         Vector2 randomPoint = new Vector2(spawnX, spawnY);
         return randomPoint;
