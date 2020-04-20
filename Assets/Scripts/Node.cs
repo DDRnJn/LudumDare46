@@ -16,6 +16,8 @@ public class Node
 
     public bool isFinalNode = false;
 
+    public int inputNum;
+
     public GateType getCurrentGate()
     {
         if (socket)

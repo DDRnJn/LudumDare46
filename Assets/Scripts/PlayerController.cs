@@ -105,8 +105,11 @@ public class PlayerController : MonoBehaviour
             Socket socket = other.GetComponent<Socket>();
             if (socket.overwriteable)
             {
-                socket.placeLogicGate(this.logicGatePlayerTransform);
-                this.logicGatePlayerTransform = null;
+                bool placedGate = socket.placeLogicGate(this.logicGatePlayerTransform);
+                if (placedGate)
+                {
+                    this.logicGatePlayerTransform = null;
+                }
             }
         }
     }

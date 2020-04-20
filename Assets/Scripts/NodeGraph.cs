@@ -42,4 +42,16 @@ public class NodeGraph
         return true;
     }
 
+    public Node getNodeFromSocket(Socket socket)
+    {
+        foreach (Node node in this.graph)
+        {
+            if (node.socket == socket)
+            {
+                return node;
+            }
+        }
+        return null;
+    }
+
 }

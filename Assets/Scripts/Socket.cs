@@ -28,9 +28,13 @@ public class Socket : MonoBehaviour
         }
     }
 
-    public void placeLogicGate(Transform logicGate)
+    public bool placeLogicGate(Transform logicGate)
     {
-        if (this.overwriteable && logicGate)
+        if (this.overwriteable &&
+                     logicGate &&
+                     this.levelInitManager.checkInputNum(
+                     this, logicGate.GetComponent<LogicGatePlayer>().gateType)
+        )
         {
             if (currentLogicGate)
             {
@@ -47,7 +51,9 @@ public class Socket : MonoBehaviour
             {
                 this.levelInitManager.endLevelVictory();
             }
+            return true;
             //Debug.Log(this.levelInitManager.checkIfLevelComplete());
         }
+        return false;
     }
 }

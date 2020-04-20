@@ -90,6 +90,20 @@ public class LevelInitManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public bool checkInputNum(Socket socket, GateType gateType)
+    {
+        Node node = this.graph.getNodeFromSocket(socket);
+        if (node.inputNum == 1 && gateType == GateType.NOT)
+        {
+            return true;
+        }
+        if (node.inputNum == 2 && (gateType == GateType.OR || gateType == GateType.AND))
+        {
+            return true;
+        }
+        return false;
+    }
+
     public NodeGraph createLevel1Graph()
     {
         NodeGraph graph = new NodeGraph();
@@ -109,9 +123,13 @@ public class LevelInitManager : MonoBehaviour
         rootNode2.inputs.Add(true);
         rootNode2.inputs.Add(true);
 
+        rootNode1.inputNum = 1;
+        rootNode2.inputNum = 2;
+
         Node finalNode = new Node();
 
         finalNode.socket = sockets[2];
+        finalNode.inputNum = 2;
         finalNode.isFinalNode = true;
         graph.finalNode = finalNode;
 
@@ -163,6 +181,12 @@ public class LevelInitManager : MonoBehaviour
 
         finalNode.isFinalNode = true;
         graph.finalNode = finalNode;
+
+        rootNode1.inputNum = 1;
+        rootNode2.inputNum = 1;
+        middleNode1.inputNum = 2;
+        middleNode2.inputNum = 1;
+        finalNode.inputNum = 2;
 
         graph.graph.Add(rootNode1);
         graph.graph.Add(rootNode2);
