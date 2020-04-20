@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 811366fbd36ee4a458b5835b23527e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 0.1
+  movementSpeed: 0.2
   rotation: {x: 0, y: 0}
   playerSprite: {fileID: 2468482859147673506}
   shooter: {fileID: 2468482857805711423}
@@ -101,6 +101,7 @@ MonoBehaviour:
   totalHealth: 10
   currentHealth: 0
   healthBar: {fileID: 3337320258642818599}
+  canTakeDamage: 1
 --- !u!50 &7743516046893687333
 Rigidbody2D:
   serializedVersion: 4
