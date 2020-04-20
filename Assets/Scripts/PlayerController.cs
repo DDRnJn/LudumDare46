@@ -100,5 +100,11 @@ public class PlayerController : MonoBehaviour
             this.logicGatePlayerTransform = logicGatePlayerSprite;
             logicGateSpawn.destroy();
         }
+        if (other.tag == "Socket")
+        {
+            Socket socket = other.GetComponent<Socket>();
+            socket.placeLogicGate(this.logicGatePlayerTransform);
+            this.logicGatePlayerTransform = null;
+        }
     }
 }
