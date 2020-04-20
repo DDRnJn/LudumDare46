@@ -1496,3 +1496,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startButton: {fileID: 1304352439}
+  instructionsButton: {fileID: 54200873}
