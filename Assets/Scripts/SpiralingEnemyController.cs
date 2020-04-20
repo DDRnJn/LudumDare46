@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpiralingEnemyController : EnemyController
 {
-    
+
     public float circlePeriod;
     public float radiusPeriod;
     public float minRadius;
@@ -19,21 +19,21 @@ public class SpiralingEnemyController : EnemyController
         base.Awake();
         this.startTime = Time.time;
         Vector3 towardsTarget = Vector3.Normalize(this.target.position - this.transform.position);
-        this.basePosition = this.transform.position + minRadius*towardsTarget;
+        this.basePosition = this.transform.position + minRadius * towardsTarget;
         this.initialAngle = Mathf.Atan2(towardsTarget.y, towardsTarget.x);
     }
 
     void Update()
     {
-        float step = Time.time - this.startTime; 
+        float step = Time.time - this.startTime;
 
         // Widening/narrowing of the circle width
-        float radius = (-Mathf.Cos(step * Mathf.PI/radiusPeriod) + 1)/2 * (maxRadius - minRadius) + minRadius;
+        float radius = (-Mathf.Cos(step * Mathf.PI / radiusPeriod) + 1) / 2 * (maxRadius - minRadius) + minRadius;
 
         // Movement along the circle
-        float angle = (2*Mathf.PI * step/circlePeriod) + this.initialAngle;
-        float yOffset = radius*Mathf.Sin(angle);
-        float xOffset = radius*Mathf.Cos(angle);
+        float angle = (2 * Mathf.PI * step / circlePeriod) + this.initialAngle;
+        float yOffset = radius * Mathf.Sin(angle);
+        float xOffset = radius * Mathf.Cos(angle);
 
         // Slight movement from following target (using speed)
         Vector3 approach = Vector3.Normalize(this.target.position - this.transform.position) * speed;
@@ -56,7 +56,7 @@ public class SpiralingEnemyController : EnemyController
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject other = collision.gameObject;
-        if (other.tag == this.tag)
+        if (other.tag == this.tag || other.tag == "GatePickup")
         {
             Physics2D.IgnoreCollision(other.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
         }

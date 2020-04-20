@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BouncingEnemyController : EnemyController
 {
-    
+
     public float period;
     public float bounceHeight;
     public float bounceWidth;
@@ -12,7 +12,7 @@ public class BouncingEnemyController : EnemyController
 
     private float startTime;
     private Vector3 basePosition;
-    
+
     protected override void Awake()
     {
         base.Awake();
@@ -39,21 +39,25 @@ public class BouncingEnemyController : EnemyController
         );
     }
 
-    private float xOffset(float step) {
-        int bounceIndex = Mathf.FloorToInt(step/period) % (2 * bounceRange);
+    private float xOffset(float step)
+    {
+        int bounceIndex = Mathf.FloorToInt(step / period) % (2 * bounceRange);
         float normalStep = step % (bounceRange * period);
-        if (bounceIndex < bounceRange) {
-            return normalStep * bounceWidth/period;
-        } else {
+        if (bounceIndex < bounceRange)
+        {
+            return normalStep * bounceWidth / period;
+        }
+        else
+        {
             float maxDist = bounceRange * bounceWidth;
-            return maxDist - (normalStep * bounceWidth/period);
+            return maxDist - (normalStep * bounceWidth / period);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject other = collision.gameObject;
-        if (other.tag == this.tag)
+        if (other.tag == this.tag || other.tag == "GatePickup")
         {
             Physics2D.IgnoreCollision(other.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
         }

@@ -38,7 +38,7 @@ public class OscillatingEnemyController : EnemyController
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject other = collision.gameObject;
-        if (other.tag == this.tag)
+        if (other.tag == this.tag || other.tag == "GatePickup")
         {
             Physics2D.IgnoreCollision(other.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
         }

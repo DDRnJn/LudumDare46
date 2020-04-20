@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject other = collision.gameObject;
-        if (other.tag == this.selfTag)
+        if (other.tag == this.selfTag || other.tag == "GatePickup")
         {
             Physics2D.IgnoreCollision(other.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
         }
